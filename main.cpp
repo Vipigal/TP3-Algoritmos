@@ -5,17 +5,14 @@
 
 using namespace std;
 
-
-
-
-void printAlloys(vector<int> alloys){
+void printAlloys(const vector<int> &alloys){
 	for(auto a : alloys){
 		cout<<a<<' ';
 	}
 	cout<<endl;
 }
 
-int findMinimumAlloysNumber(vector<int> alloys, int order){
+int findMinimumAlloysNumber(const vector<int> &alloys, int order){
 	vector<int> alloyNumber(order + 1, INF); //Para cada index i, alloyNumber[i] é o numero mínimo de alloys para satisfazer o pedido i.
 	alloyNumber[0] = 0;
 
@@ -45,7 +42,7 @@ int main(int argc, char const *argv[]) {
 			int buffer{0};
 			cin>>buffer;
 			alloys.push_back(buffer);
-		}
+		} 
 
 		// printAlloys(alloys);
 		int minimum_alloys = findMinimumAlloysNumber(alloys, order);
